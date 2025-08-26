@@ -439,6 +439,15 @@ Object representation in Java / JavaScript / Visual Basic of tree of XML element
 1) create new elements
 2) remove elements
 3) access elements
+getElementById()
+getElementsByTagName()
+getElementsByTagName("div"); give array of div's
+querySelectorAll("div"); same as above
+querySelector() for by ID, tag name, by class name, sub selectors
+document.querySelector(".tmpl-header_logo").innerHTML = "Adobe"
+document.querySelector(".tmpl-header_head > div > h1")
+
 4) traverse through elements
 5) add event handling to the elements [ make it interactive]
+
 
