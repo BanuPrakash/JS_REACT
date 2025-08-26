@@ -249,3 +249,31 @@ Open for Extension; Closed for a Change.
 * reduce --> to get aggregate like sum(), avg(), count()..
 
 Note: all these methods are already available in array type of collection
+
+https://rxmarbles.com/
+
+Task: https://rxmarbles.com/#reduce
+Write a reduce() HOF
+pass aggregate function sum
+get sum of prices of all products
+
+Function returning a function --> HOF --> leads to Closure
+
+Closure: returned function from a function can access all the members of outer function.
+
+```
+
+    function greet(msg) {
+        return function(name) {
+            return msg + name;
+        }
+    }
+
+    var morningGreet = greet("Good Morning");
+
+    console.log(morningGreet("Ria")); // Good Morning Ria
+    console.log(morningGreet("Priya")); // Good Morning Priya
+
+```
+
+Memoization is a computer programming technique for speeding up applications by storing the results of expensive function calls and returning the cached result when the same inputs occur again.
