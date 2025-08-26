@@ -337,7 +337,7 @@ function async doTask() {
 
 6) ESM --> ES Module system
 JS module systems: is to modularize the code and bringing in the concept of visibility like private and public member
-1) IIFE [ Immediately Invoked Function Expression ]
+a) IIFE [ Immediately Invoked Function Expression ]
 ```
   let ShopModule = (function() {
     let data = [];
@@ -371,9 +371,9 @@ JS module systems: is to modularize the code and bringing in the concept of visi
  ShopModule.data; // error, not visible
 
 ```
-2) CommonJS module system --> default for NodeJS and JS engines
+b) CommonJS module system --> default for NodeJS and JS engines
 Cover it along with NodeJS.
-3) ESM
+c) ESM
 ```
 lib.js
 function add() {} // private
@@ -401,9 +401,33 @@ import filter, {map} from './lib';
 can't import add
 
 ```
-4) AMD
+d) AMD
 https://requirejs.org/docs/whyamd.html
-5) SystemJS
+e) SystemJS
 
+======
 
+6) Destructuring array and objects
+7) REST operator for parameters
 
+```
+// zero to n arguments can be passed
+function sum(...theArgs) {
+  let total = 0;
+  for (const arg of theArgs) {
+    total += arg;
+  }
+  return total;
+}
+
+console.log(sum(1, 2, 3));
+// Expected output: 6
+
+console.log(sum(1, 2, 3, 4));
+
+```
+
+8) Generator function
+A generator function is a special type of function that can pause its execution and resume later, allowing it to produce a sequence of values over time rather than returning a single value immediately. [yield instead of return statement]
+
+===============

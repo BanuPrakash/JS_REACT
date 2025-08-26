@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var product =  { "id": 53, "name": "Sony Bravia", "price": 245000.00, "category": "tv" };
+        // destructuring an object
+        let {name, price} = product;
+        console.log(name, price);
+
+        console.log("OLD Way");
+        console.log(product.name, product.price);
+
+        var colors = ['red', 'green','blue','lavender', 'pink'];
+
+        console.log("Old way");
+        console.log(colors[0], colors[1]);
+
+        console.log("ES6 feature");
+        let [r, g, ...others] = colors;
+        console.log(r, g);
+        console.log(others); // ['blue', 'lavender', 'pink']
+
+        // generator
+        function *executeCode() {
+            console.log("Step 1");
+            console.log("Step 2");
+            yield {"id": 15, "name": "Notebook", "price": 250.00};
+            console.log("step 3");
+            yield "Payment done!!!";
+            console.log("Step 4");
+            console.log("Step 5");
+            yield 400;
+        }
+
+        let iter = executeCode();
+        let resultProduct = iter.next();
+        console.log(resultProduct.value, resultProduct.done);
+        if(resultProduct.value.price < 500) {
+            let result = iter.next(); // continue with payment
+            console.log(result.value, result.done);
+        }
+    </script>
+</body>
+</html>
