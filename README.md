@@ -202,7 +202,7 @@ console.log(ref());
 
 Solution:
 var ref2 = product.getTitle.bind(product); // this refers to product
-
+console.log(ref2()); // Wacom
 ```
 
 methods inherited from Function object to each function generally used are:
@@ -233,3 +233,19 @@ methods inherited from Function object to each function generally used are:
 
 apply --> Check this out; similar to call
 ```
+
+Functional style of programming uses HOF.
+High Order Function:
+1) function accepts function as argument
+2) function returns a function
+
+Treat function as first class member just like primitives or object
+
+HOF are a way to write OCP principle
+Open for Extension; Closed for a Change.
+
+* filter --> to get subset
+* map --> to transform data
+* reduce --> to get aggregate like sum(), avg(), count()..
+
+Note: all these methods are already available in array type of collection

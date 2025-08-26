@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib.js"></script>
+</head>
+
+<body>
+    <h1>High Order Functions</h1>
+    <script>
+        var numbers = [5, 2, 11, 87, 23, 60, 42, 12];
+        var evens = filter(numbers, function (no) { return no % 2 === 0 });
+        console.log(evens);
+
+        var products = [
+            { "id": 53, "name": "Sony Bravia", "price": 245000.00, "category": "tv" },
+            { "id": 2, "name": "LG AC", "price": 54000.00, "category": "AC" },
+            { "id": 53, "name": "LG Joy", "price": 151000.00, "category": "tv" },
+            { "id": 53, "name": "Samsung Fold", "price": 198000.00, "category": "mobile" },
+            { "id": 53, "name": "iPhone 16", "price": 89000.00, "category": "mobile" },
+            { "id": 53, "name": "Daiken", "price": 51000.00, "category": "AC" }
+        ]
+        function isMobile(p) {
+            return p.category === 'mobile';
+        }
+        let mobiles = filter(products, isMobile);
+
+        console.log(mobiles);
+
+        console.log("***************");
+
+        function doubleIt(no) { return no * 2; }
+        let data = map(numbers, doubleIt);
+        console.log(data);
+
+        function toCard(product) {
+            return `
+                <div class="card">
+                    <div class="card-header">
+                            ${product.name}
+                    </div>
+                    <div>
+                        ${product.category}  Rs.${product.price}
+                    </div>
+                </div>
+            `
+        }
+
+        var cards = map(products, toCard);
+        cards.forEach(card => console.log(card));
+    </script>
+</body>
+
+</html>
