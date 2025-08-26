@@ -431,3 +431,14 @@ console.log(sum(1, 2, 3, 4));
 A generator function is a special type of function that can pause its execution and resume later, allowing it to produce a sequence of values over time rather than returning a single value immediately. [yield instead of return statement]
 
 ===============
+
+DOM: Document Object Model
+Object representation in Java / JavaScript / Visual Basic of tree of XML elements [HTML]
+
+* Using DOM Apis we can
+1) create new elements
+2) remove elements
+3) access elements
+4) traverse through elements
+5) add event handling to the elements [ make it interactive]
+
