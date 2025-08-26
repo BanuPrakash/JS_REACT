@@ -277,3 +277,133 @@ Closure: returned function from a function can access all the members of outer f
 ```
 
 Memoization is a computer programming technique for speeding up applications by storing the results of expensive function calls and returning the cached result when the same inputs occur again.
+
+=================
+
+New Features of JS ECMAScript 2024 (ES2024)
+https://caniuse.com/
+
+1) Scope members using let and const
+
+if(condition) {
+    // not hoisted to function scope
+    let data = 100; // this member is not visible outside of block
+}
+
+const PI = 3.14159; // constant
+
+2) Template String `` use tick instead of single or double quote.
+check hof.html
+
+3) arrow functions
+```
+  var evens = filter(numbers, function (no) { return no % 2 === 0 });
+      can be written as
+  var evens = filter(numbers, no => no % 2 === 0);
+```
+
+4) Promise API for asynchrous side-effects like API calls to server...
+promise can resolve() or reject()
+
+Synchronous call:
+
+let result = doTask(); // blocking statement
+// lines below this are not executed until doTask() completes
+
+Asynchronous call using promise:
+// resolve / reject is pushed to the Micro Task Queue --> stack for execution
+// non-blocking
+doTask().then(function resolve(data) {
+
+},
+function reject(err) {
+
+});
+
+console.log("Some other job!!!"); // will execute before promise is resolved / rejected
+
+// Promise uses WebApi / libuv Threads
+// useful for concurrency
+
+5) async / await --> syntactical sugar for promise to avoid callback hell
+
+function async doTask() {
+    let connection = await connectToDatabase(); // blocking
+    let users = await getUsers(connection); // blocking
+    let usersSettings = await getUserSettings(users); // blocking
+    enableSettings(usersSettings, true);
+}
+
+
+6) ESM --> ES Module system
+JS module systems: is to modularize the code and bringing in the concept of visibility like private and public member
+1) IIFE [ Immediately Invoked Function Expression ]
+```
+  let ShopModule = (function() {
+    let data = [];
+    let total;
+    function computeTotal() {
+        ...
+    }
+    function addtoCart(item) {
+        data.push(item);
+        computeTotal();
+    }
+
+    function getCart() {
+        return data;
+    }
+
+    // public
+    return {
+        getCart,
+        addtoCart
+    }
+  })();
+
+ let ProfileModule = (function() {
+    let data = []; // valid for ProfileModule
+    ...
+ })();
+ ShopModule.addtoCart({...});
+ ShopModule.getCart().forEach(...);
+ ShopModule.computeTotal(); // error , not visible
+ ShopModule.data; // error, not visible
+
+```
+2) CommonJS module system --> default for NodeJS and JS engines
+Cover it along with NodeJS.
+3) ESM
+```
+lib.js
+function add() {} // private
+export default function filter(elems, predicateFn) {
+    var result = [];
+    for(var i = 0;  i< elems.length; i++) {
+        if(predicateFn(elems[i])) {
+            result.push(elems[i]);
+        }
+    }
+    return result;
+}
+
+// HOF
+export function map(elems, transformFn) {
+    var result = [];
+    for(var i = 0;  i< elems.length; i++) {
+            result.push(transformFn(elems[i]));
+    }
+    return result;
+}
+
+index.js
+import filter, {map} from './lib';
+can't import add
+
+```
+4) AMD
+https://requirejs.org/docs/whyamd.html
+5) SystemJS
+
+
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getHotels() {
+            return new Promise( function(resolve, reject) {
+                // async non blocking code
+                setTimeout(() => resolve("Hotels!!"), 2000);
+            });
+        }
+
+         function getFlights() {
+            return new Promise( function(resolve, reject) {
+                // async non blocking code
+                setTimeout(() => resolve("Flights!!"), 2500);
+            });
+        }
+
+        console.time("profile")
+        Promise.all([getHotels(), getFlights()]).then(data => {
+            console.log(data[0]);
+            console.log(data[1]);
+            console.timeEnd("profile")
+        })
+    </script>
+</body>
+</html>
