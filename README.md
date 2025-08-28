@@ -737,3 +737,10 @@ orphan modules 1.94 KiB [orphan] 2 modules
 ./src/index.js + 2 modules 2.1 KiB [built] [code generated]
 webpack 5.101.3 compiled successfully in 435 ms
 ```
+
+Babel config can be in babel.config.js / .babelrc / babel.config.json
+
+========
+
+webpack_example % npm i css-loader style-loader -D
+
