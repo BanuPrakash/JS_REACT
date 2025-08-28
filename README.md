@@ -755,3 +755,20 @@ JSX is not valid JavaScript on its own; it needs to be "transpiled" or converted
  Converting your JS object to DOM we call it as rendering..
 
  https://github.com/chentsulin/awesome-react-renderer
+
+ ==========================
+
+ vite ==> veet
+ Next Generation build tool developed by vue.js team
+ * Built-in support for typescript, JSX, CSS and static assets
+ no need for babel-loader, ts-loader, css-loader, file-loader
+ HMR support is provided.
+ comes with pre-build dev-server
+
+npm create vite@latest
+Vanilla
+JavaScript
+npm install
+npm run dev
+
+Project
