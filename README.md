@@ -859,4 +859,52 @@ Learning curve, heavy
 
 React is just a View Library, no support for Model [3rd party state management]
 
-Resume @ 4:10
+==========================================
+
+React View Library
+
+A ReactElement is an object with type and props.
+React nodes are not a real DOM, but a representation of a potential DOM node.
+The representation is considerd virtual DOM
+
+A react node is a ReactElement, Fragment, a string, number, array of ReactNodes, null, undefined or boolean
+
+Ways to create React Component
+1) React.createElement() Core API
+let Elem = React.createElement("h1",{{"style":"width":"20px"}}, "Welcome to React");
+
+2) class components has render() method which returns JSX, returned JSX is given to React.creatElement()
+class components can have state, lifecycle methods and behaviours.
+
+```
+class ProductCard extends Component {
+    ...
+    render() {
+        // JSX
+    }
+}
+
+```
+3) functional component returns JSX, returned JSX is given to React.createElement()
+
+```
+function ProductCard() {
+    return JSX;
+}
+```
+
+Usage wise 99% of the time we use functional component.
+
+===============
+
+ways to create react scaffolding projects:
+1) npx create-react-app sampleapp
+this creates a react application using "webpack", "babel", ...
+Create React App (CRA) has been officially deprecated. The React team announced its deprecation in February 2025
+
+2) npm create vite@latest 
+this creates a react applicaiton using "vite" instead of webpack
+
+React version is 19.
+
+
