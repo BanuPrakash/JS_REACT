@@ -6,6 +6,7 @@ module.exports = {
         filename: 'bundle.[contenthash:8].js',
         path: path.resolve(__dirname, 'dist'), // Absolute path to the output directory
     },
+    target: ['web', 'es5'],
     module: {
         rules: [
             {

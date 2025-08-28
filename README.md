@@ -706,3 +706,34 @@ to
 =========================
 
 Note: Configuration files has to be CommonJS and not ESM
+
+Development Mode: 
+```
+npm run dev
+
+> webpack_example@1.0.0 dev
+> webpack --mode development
+
+asset bundle.7013671c.js 6.74 KiB [emitted] [immutable] (name: main)
+runtime modules 695 bytes 3 modules
+cacheable modules 2.1 KiB
+  ./src/index.js 166 bytes [built] [code generated]
+  ./src/Person.js 1.88 KiB [built] [code generated]
+  ./src/util.js 69 bytes [built] [code generated]
+webpack 5.101.3 compiled successfully in 366 ms
+
+```
+
+Production Mode:
+
+```
+npm run prod
+
+> webpack_example@1.0.0 prod
+> webpack --mode production
+
+asset bundle.e6ac9ea6.js 1.26 KiB [emitted] [immutable] [minimized] (name: main)
+orphan modules 1.94 KiB [orphan] 2 modules
+./src/index.js + 2 modules 2.1 KiB [built] [code generated]
+webpack 5.101.3 compiled successfully in 435 ms
+```
