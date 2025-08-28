@@ -451,3 +451,163 @@ document.querySelector(".tmpl-header_head > div > h1")
 5) add event handling to the elements [ make it interactive]
 
 
+```
+// create custom events
+const catFound = new CustomEvent("animalfound", {
+  detail: {
+    name: "cat",
+  },
+});
+const dogFound = new CustomEvent("animalfound", {
+  detail: {
+    name: "dog",
+  },
+});
+
+// add an appropriate event listener
+element.addEventListener("animalfound", (e) => console.log(e.detail.name));
+
+// dispatch the events
+element.dispatchEvent(catFound);
+element.dispatchEvent(dogFound);
+```
+
+In DOM: keyboard and Mouse are low level events
+click, focus, Change events are high level events
+
+Change event is based on keyDown and KeyUp
+
+click is mouse button down and mouse button up
+
+=================
+
+Task: Learn Change event, focus event
+
+Create a Dropdown select which has colors. selecting a color background of body should change.
+
+Text Box 1:
+Text Box 2:
+Div with id as "result"
+
+3 Radio button for Add Subtract Multiple
+Button called as compute is created
+Click on the button result should be shown based on which radio button was selected
+
+=============
+
+Recap:
+JavaScript basics. OOP, Functional Style of Programming using HOF, Closure
+Memoization pattern using Closure.
+ES 6 + new features: ESM, export [default and non default members] and import 
+Promise, Destructuring, arrow, class, generator ...
+DOM : Document Object Model --> create, delete, access, traverse and event handling.
+
+```
+    <input type="text" id="txtName" />
+    <button id="btn">Ok</button>
+
+    function doTask(evt) {
+
+    }
+    function fn(evt) {
+        ...
+    }
+    document.getElementById("btn").addEventListener("click", fn);
+    document.getElementById("btn").addEventListener("mouseHover", doTask); // high priority
+    document.getElementById("txtName").addEventListener("change", fn);
+    document.getElementById("txtName").addEventListener("keyPress", doTask); // high priority
+```
+
+Day 2:
+
+NodeJS: Platform built on top of V8 engine runtime and uses libuv for asynchronous operations similar to what WebApi gives for browsers
+Created by Ray Daul --> 2009 / 2010
+
+Deno and Bun are alternatives to NodeJS
+
+=======
+
+Why NodeJS?
+1) can be used to build traditional web applications to render pages on server and send presentation pages to client.
+
+2) can be used to build RESTful WebServices like Spring Boot / Razor of .NET 
+
+3) can be used to build Real time applications like Chatbots
+
+4) can be used for Streaming APi [ Netflix and others are using it]
+
+5) Platform for:
+a) Transpile / Compile code
+    Latest Version of JS --> lower version of JS  [ transpiler like Babel / Traucer]
+    TypeScript --> JS
+        statically typed like
+        let name:string = "Roger"
+    DART --> JS
+    CoffeeScript --> JS
+    LiveScript --> JS
+b) Testing - Unit Testing, Integration Testing and E2E Testing
+c) Minify and Uglify your code
+
+```
+    function getEmployeeById(id) {
+        let employee = null;
+        fetch(...).then(..).then(..);
+    }
+
+    minified code:
+    function getEmployeeById(id){let employee = null;fetch(...).then(..).then(..);}
+
+    uglified code:
+    function _g(id){let _e = null;fetch(...).then(..).then(..);}
+
+```
+d) bundle
+without bundling:
+
+index.html
+``` 
+    Each inclusion of script and link leads to a Netwrok call from client to server
+    Here 1 call to get index.html
+    5 calls to load js files
+    2 calls to load css files
+    <script src="products.js"> </script>
+    <script src="customers.js"> </script>
+    <script src="items.js"> </script>
+    <script src="orders.js"> </script>
+    <script src="payment.js"> </script>
+    <link rel="stylesheets" href="styles.css">
+    <link rel="stylesheets" href="main.css">
+    Another problem is the order in script is important; here payment depends on order and customer,
+    order depends on item depends on product
+```
+
+Solution: bundle them and include:
+
+```
+    <script src="bundle.js"></script>
+    <link rel="stylesheets" href="cssBundle.css">
+```
+
+NodeJS projects structure.
+NodeJS comes with NPM as node package manager [like Maven / Gradle for Java], using this we install depenedencies, publish module to repo, execute goals like compile, start, test, ...
+https://www.npmjs.com/
+
+Alternatives for NPM : YARN, PNPM, RUSH
+
+====
+Steps for NodeJS project
+1) npm init --y
+this creates a package.json file
+package.json -- similar to pom.xml
+
+npm i lodash --> gets installed in node_modules folder
+3rd party libraries are installed in node_modules folder
+
+every NodeJS project needs its dependencies in node_modules folder.
+
+Only executable node modules will be stored in central folders like
+
+npm i jest -D
+
+devDependencies --> required only in development stage and not in production
+

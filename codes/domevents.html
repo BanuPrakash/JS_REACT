@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .first {
+            background-color: bisque;
+            color: green;
+        }
+
+        .second {
+            background-color: brown;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="para">
+        This is the Div element in HTML, whose styles are getting changed based on event!!!
+    </div>
+    <button id="first">First</button>
+    <button id="second">Second</button>
+
+    <script>
+        document.getElementById("first").addEventListener("click", evt => {
+            document.getElementById("para").classList = 'first';
+        })
+        document.getElementById("second").addEventListener("click", evt => {
+            document.getElementById("para").classList = 'second';
+        })
+
+
+    </script>
+</body>
+
+</html>
