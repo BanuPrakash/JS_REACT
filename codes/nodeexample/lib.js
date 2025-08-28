@@ -1,3 +1,9 @@
+function forEach(elems, action) {
+    for(var i = 0;  i< elems.length; i++) {
+        action(elems[i]);
+    }
+}
+
 function filter(elems, predicateFn) {
     var result = [];
     for(var i = 0;  i< elems.length; i++) {
@@ -20,6 +26,10 @@ function map(elems, transformFn) {
 function doTask() {
 
 }
+
+function add(x,y) {
+    return x + y;
+}
 module.exports = {
-    filter, map
+    filter, map, add, forEach
 }

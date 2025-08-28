@@ -607,7 +607,35 @@ every NodeJS project needs its dependencies in node_modules folder.
 
 Only executable node modules will be stored in central folders like
 
+npm i lodash
+
 npm i jest -D
 
 devDependencies --> required only in development stage and not in production
+
+```
+"lodash": "4.17.21" --> Exact version
+"lodash": "^4.17.21" --> Any version equal or greater than mentioned download from repo
+
+"lodash": "~4.17.21" --> Major version has to be 4, minor and patch can be latest
+
+Developer pushes code and package.json to repository.
+Other team members downloads the project and installs dependencies in their machines:
+npm install
+
+```
+
+Unit testing libraries for JavaScript:
+1) Mocha
+2) Jasmine
+3) JEST
+4) VITEST
+
+Testing --> AAA --> Assemble Action Assert
+Only changes are in assertion code, Solution use 3rd party assertion libraries like chaiJS
+https://www.chaijs.com/
+
+by default testing libraries looks out for files with *.test.js or *.spec.js for testing code
+
+https://jestjs.io/docs/mock-functions
 
