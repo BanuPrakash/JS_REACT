@@ -776,3 +776,87 @@ Customizing Vite with vite.config.js similar to webpack.config.js
 like @babel/preset-react
 
 npm i start-dom-jsx -D
+
+=======================
+
+* SSR -> server side rendering
+Pro:
+ * thin clients
+ * SEO
+Cons:
+ * Can't have heterogenous clients like web, mobile, tv, desktop
+ * Heavy payload --> between client and server for every request entire page is sent
+
+* CSR -> Client Side rendering
+Pros:
+* Light payload [only JSON / XML] 
+* Client Server architecture can evolve seperately
+* Heterogenous clients
+Cons:
+ * Heavy clients
+ * Not SEO
+
+Front end libraries / frameworks for web application
+1) DOM: create element, event handling, remove element, traverse, ...
+2) jQuery library
+    ```
+        $("<div>")
+        same as document.createElement("div");
+
+        $("div")
+        document.getElementsByTagName("div")
+
+        $(".card")
+        document.querySelector(".card");
+
+        document.getElementById("btn").addEventListener("click", fn);
+        $("#btn").on("click", fn);
+    ```
+3) Templates like Underscore, Handlebar, Mustache, Pug, Jade, Knockout, ...
+
+```
+    Template:
+    <ul class="people_list">
+        {{#each people}}
+            <li>{{this}}</li>
+        {{/each}}
+    </ul>
+
+    Data from RESTendpoint:
+    {
+      people: [
+            "Yehuda Katz",
+            "Alan Johnson",
+            "Charles Jolley",
+    ],
+    }
+
+    Output:
+    <ul class="people_list">
+        <li>Yehuda Katz</li>
+        <li>Alan Johnson</li>
+        <li>Charles Jolley</li>
+    </ul>
+```
+SPA: Single Page Application [index.html] with many views, here state management become complicated
+4) Backbone is based on MVC Architectural pattern --> library
+ModelViewController
+It gave Controller and Model Support, for View we could choose any of the templates
+Model --> data and logic
+View --> Presentation layer [interpolation]
+controller --> handling UI interaction
+5) AngularJS --> Framework by Google [total solution]
+6)  XHP --> 2010 --> Marcel Laverdet [Facebook]
+XML in PHP
+FaxJS --> 2011 --> Jordan Walke [JSX]
+ReactJS --> 2012 [JSX] --> jsConf demo
+Open Source --> 2013
+Khan Academy --> Sophie Alpert
+2015 --> Stable --> Netflix, Airbnb
+7) Angular --> Framework [better than AngularJS], total solution 
+Learning curve, heavy
+8) Vue, Svelete, ...
+
+React is just a View Library, no support for Model [3rd party state management]
+
+Resume @ 4:10
