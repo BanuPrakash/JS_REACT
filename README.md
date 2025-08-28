@@ -639,3 +639,67 @@ by default testing libraries looks out for files with *.test.js or *.spec.js for
 
 https://jestjs.io/docs/mock-functions
 
+=========================================
+
+JS build tools to automate process:
+1) Grunt
+2) Gulp
+3) Webpack [ default tool used to generate scaffolding code for react / Vue/ Svelte... until FEB 2025]
+4) vite [ React/ Vue moved to this in FEB 2025]
+5) parcel
+6) esbuild
+
+JavaScript build tool used to automatically perform frequent tasks such as minification, uglify, compilation, bundle, unit testing, and linting.
+
+--------
+
+Webpack:
+1) initialize Node Project -- create package.json
+webpack_example % npm init --y
+2) install development depenencies
+webpack_example % npm i @babel/core babel-loader @babel/preset-env -D
+babel-loader:
+By default NodeJS uses CommonJS module system, if we use ESM module system, NodeJS doesn't understand it, we need babel-loader to load imported files like
+import filter, {map} from './lib';
+
+@babel/core: Transpiler --> converts ESM to CommonJS format so that NodeJS can execute.
+
+@babel/preset-env: is a smart preset that allows you to use the latest JavaScript without needing to micromanage which syntax transforms (and optionally, browser polyfills) are needed by your target environment(s). 
+
+Example of syntax transforms:
+latest JS we write let {name, price} = product;
+gets converted to 
+let name = product.name;
+let price = product.price;
+
+let add = (x, y) => x + y;
+gets converted to
+function add (x,y) {
+    return x + y;
+}
+
+A polyfill is a piece of code that adds new functionality to older environments, such as browsers, that do not natively support it. 
+We can use latest JS features like Promise, Map, ... which is not supported by older browsers. we need an alternate code to simulate this.
+
+Most of the latest polyfills are provided by core-js:
+https://www.npmjs.com/package/core-js
+
+
+webpack_example % npm i webpack webpack-cli -D
+
+webpack_example % npm i html-webpack-plugin  webpack-dev-server -D
+
+The HtmlWebpackPlugin simplifies creation of HTML files to serve your webpack bundles. 
+This is especially useful for webpack bundles that include a hash in the filename which changes every compilation.
+
+Also there could be many bundles like seperate for libraries, for customer module, product module...
+<script src="vendor.bundle.js"> </script>
+
+HMR --> Hot Module Replacement (HMR) exchanges, adds, or removes modules while an application is running, without a full reload.
+
+index.html
+Change from
+<script src="bundle.#vsdf32521.js"> </script>
+to 
+<script src="bundle.ydf!@ddf2.js"> </script>
+

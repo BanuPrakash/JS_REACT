@@ -1,4 +1,4 @@
-const { add, filter, map } = require('./lib');
+const { add, filter, map, forEach } = require('../src/lib');
 
 // vitest.fn(); 
 // test suite, Assemble collection of tests
@@ -34,8 +34,8 @@ describe("testing lib ", () => {
     it("testing forEach", () => {
         const action = jest.fn(); // mock
         forEach([5, 10, 9, 7, 6], action);
-        expect(action.calls.length).toBe(5);
-        expect(predicateMockFn.mock.calls[0][0]).toBe(5);
-        expect(predicateMockFn.mock.calls[1][0]).toBe(10);
+        expect(action.mock.calls.length).toBe(5);
+        expect(action.mock.calls[0][0]).toBe(5);
+        expect(action.mock.calls[1][0]).toBe(10);
     });
 })

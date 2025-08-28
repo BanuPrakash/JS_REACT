@@ -1,4 +1,4 @@
-const { filter } = require('./lib'); // relative search
+const { filter } = require('./src/lib'); // relative search
 const { random } = require('lodash'); // search built-in --> node_modules
 
 console.log(random(100));
