@@ -703,3 +703,6 @@ Change from
 to 
 <script src="bundle.ydf!@ddf2.js"> </script>
 
+=========================
+
+Note: Configuration files has to be CommonJS and not ESM
