@@ -744,3 +744,14 @@ Babel config can be in babel.config.js / .babelrc / babel.config.json
 
 webpack_example % npm i css-loader style-loader -D
 
+JSX (JavaScript Syntax Extension) is an XML-like syntax extension for JavaScript that allows developers to write XML/HTML-like code directly within JavaScript files, making it easier to describe the structure of user interfaces.
+JSX is not valid JavaScript on its own; it needs to be "transpiled" or converted into standard JavaScript objects by a tool like Babel before it can be understood by a web browser.
+
+ webpack_example % npm i @babel/preset-react -D
+
+ @babel/preset-react when it sees JSX looks for React object
+ Uncaught ReferenceError: React is not defined
+
+ Converting your JS object to DOM we call it as rendering..
+
+ https://github.com/chentsulin/awesome-react-renderer
