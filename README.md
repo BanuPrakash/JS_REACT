@@ -771,4 +771,8 @@ JavaScript
 npm install
 npm run dev
 
-Project
+Customizing Vite with vite.config.js similar to webpack.config.js
+
+like @babel/preset-react
+
+npm i start-dom-jsx -D
