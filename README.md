@@ -996,9 +996,27 @@ vite.config.js
 
 https://testing-library.com/docs/react-testing-library
 
+=======================
+
+Component Life Cycle methods.
+
+Mounting Phase:
+constructor() --> render() --> componentDidMount()
+intialize -> create view with initial data --> make API calls
+Note: Never make API calls in constructor --> leads to FCP issue
+
+youtube --> in constructor 20 videos with empty title, "diplay" is created, we get immediatly 20 placeholders
+in componentDidMount() MAKE api call and fill the placeholders
+
+Updating Phase: whenever state changes or props from parent changes this phase is triggered.
+shouldComponentUpdate() -> return --> render()
+shouldComponentUpdate() --> false --> render is not called
+componentDidUpdate() --> make API calls here for dependent data
+
+Unmounting Phase: before component is destroyed
+componentWillUnmount()
+unsubscribe any subscriptions,
+display dialog box, Thank You, ...
 
 
-
-
-
-
+npm install @faker-js/faker

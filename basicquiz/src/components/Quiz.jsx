@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-
+import Question from './Question'
+import Options from './Options'
 export default class Quiz extends Component {
     state = {
         questions: [
@@ -51,7 +52,21 @@ export default class Quiz extends Component {
     }
     render() {
         return (
-            <div>Quiz</div>
+            <div>
+                <h1>Quiz</h1> {
+                    this.state.questions.map((question, index) => (
+                        <div key={index}>
+                        <Question question={question.question} key={question.id}/>
+                        <ul style={{"listStyleType":"none"}}>
+                        {
+                            question.options.map((option,index) => <Options option={option} key={index}/>)
+                        }
+                        </ul>
+                        </div>
+                    ))
+                }
+                <button type='button'>Submit</button>
+            </div>
         )
     }
 }
