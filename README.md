@@ -908,3 +908,87 @@ this creates a react applicaiton using "vite" instead of webpack
 React version is 19.
 
 
+npm install -D vitest jsdom @testing-library/react @testing-library/jest-dom
+
+
+Day 3:
+
+Recap:
+NodeJS -- platform
+install 3rd party modules using NPM / YARN / PNPM ...
+NPM -- Node Package Manager using which we can install dependencies, execute scripts
+package.json -- every node projects needs one, where depenedecies, devDependencies, peerDepencencies are configured. Also scripts are configured
+npm i dependency
+npm i devDependency -D
+npm start
+npm test
+npm run anyOtherScript example: npm run dev
+
+Build tool: Webpack, vite
+npx create-react-app sampleapp --> creates a scaffolding code for react using webpack.
+From React 19 onwards -- FEB 2025 react recommends using vite
+npm create @vite/latest
+
+=====================
+
+JSX --> JavaScript and XML. JS is used for interpolation
+JSX has to be converted into JS object using plugins like @babel/preset-react or start-dom-jsx, ...
+
+Conveted JS object is reated as ReactElement with type/tag and props
+props are simply attributes and children.
+
+props are the way to pass data from parent to child.
+
+https://legacy.reactjs.org/docs/reconciliation.html
+The Diffing Algorithm
+```
+const diffs = [
+    {
+        newNode: { /* new version of list item */},
+        oldNode: { /* original version of list item */},
+        index: /* index of element */
+    },
+    {
+        newNode: { /* new element */},
+        index : { /* position */}
+    }, 
+    {...}
+]
+
+diffs.forEach( diff => {
+    document.createElement()
+    OR
+    document.remove()
+    OR  
+    document.getElementById(..).innerHTML = ...
+});
+
+```
+
+Thinking in React.
+
+```
+1. Atoms:
+These are the smallest, fundamental building blocks of your UI, analogous to chemical atoms.
+In React, this translates to basic, self-contained components like Button, Input, Icon, or Label.
+
+99% of the time they are just reused. no need to create from scratch
+https://react-bootstrap.netlify.app/docs/components/buttons
+https://mui.com/material-ui/react-button/
+https://opensource.adobe.com/spectrum-web-components/components/button/
+
+2) Molecules:
+Molecules are formed by combining two or more atoms to create a more complex, yet still relatively small, functional unit.
+Example: button with image; CardFooter, CardHeader
+
+3) Organisms:
+Organisms are combinations of molecules and/or atoms that form a more substantial, independent section of the UI.
+Navbar, Card like ProductCard
+70% of them are avialable
+
+4)  Templates:
+Templates define the page's structure and layout by arranging organisms. They are essentially wireframes or blueprints for pages, devoid of actual content.
+like List of MobileCard
+
+```
+

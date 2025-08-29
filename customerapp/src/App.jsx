@@ -1,6 +1,7 @@
 import './App.css'
 import CustomerList from './components/CustomerList'
 
+// XML rule --> should a only one root element
 // returns JSX
 function App() {
   return (
