@@ -22,17 +22,23 @@ export default class CustomerList extends Component {
         ]
     }
 
+    constructor() {
+        super();
+        // the best, doesn't need to bind every time it renders
+        this.filterCustomers = this.filterCustomers.bind(this);
+    }
+
     filterCustomers(txt) {
-        let custs =  this.state.original.filter(c =>  {
-            if(c.firstName.toUpperCase().indexOf(txt.toUpperCase()) >= 0 ||
+        let custs = this.state.original.filter(c => {
+            if (c.firstName.toUpperCase().indexOf(txt.toUpperCase()) >= 0 ||
                 c.lastName.toUpperCase().indexOf(txt.toUpperCase()) >= 0) {
                 return true;
             }
             return false;
-            });
+        });
 
-         this.setState({
-            customers: custs 
+        this.setState({
+            customers: custs
         });
     }
 
@@ -50,12 +56,14 @@ export default class CustomerList extends Component {
     render() {
         return (
             <div>
-                <Filter filterEvt = {(txt) => this.filterCustomers(txt)}/>
+                {/* <Filter filterEvt={(txt) => this.filterCustomers(txt)} /> */}
+                {/* <Filter filterEvt={this.filterCustomers.bind(this)} /> */}
+                <Filter filterEvt={this.filterCustomers} />
                 {
-                    this.state.customers.map(c => <CustomerRow 
-                            key={c.id}
-                            delEvent = {this.deleteCustomer.bind(this)}
-                            customer={c}/>)
+                    this.state.customers.map(c => <CustomerRow
+                        key={c.id}
+                        delEvent={this.deleteCustomer.bind(this)}
+                        customer={c} />)
                 }
             </div>
         )
