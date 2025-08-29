@@ -1020,3 +1020,17 @@ display dialog box, Thank You, ...
 
 
 npm install @faker-js/faker
+
+================
+
+functional components --> 99% of components from React 16.4 version onwards.
+Performance:
+Can be slightly more performant due to their simpler structure and the lack of class instance overhead. 
+
+class components inherit from Component -- overhead
+class components can have state, life-cycle methods
+
+In React 16.4 version Hooks was introduced to get class component capabilities.
+1) useState() to declare a state member for functional component
+2) React.memo() can be used in place of shouldComponentUpdate() lifecyle of class component for functional component.
+
