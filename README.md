@@ -1035,3 +1035,52 @@ In React 16.4 version Hooks was introduced to get class component capabilities.
 2) React.memo() can be used in place of shouldComponentUpdate() lifecyle of class component for functional component.
 3) useEffect() is a hook for componentDidMount(), componentDidUpdate() amd componentWillUnmount()
 
+```
+componentDidMount
+useEffect(() => {
+
+},[]);
+
+componentDidUpdate
+useEffect(() => {
+
+},[dependency]);
+
+componentDidMount ==> avoid using this
+useEffect(() => {
+
+});
+
+componentWillUnmount; any function returned from componentDidMount will work like
+componentWillUnmount.
+
+useEffect(() => {
+
+    return () => fn;
+},[]);
+
+fn will work like componentWillUnmount
+```
+4) useContext()
+
+Problem : props drill
+Prop drilling in React refers to the process of passing data or functions down through multiple layers of nested components via props, even when intermediate components do not directly use those props.
+
+Solution: 
+Context provides a way to pass data through the component tree without having to pass props down manually at every level.
+
+Note: Only Children of Provider can be a Consumer
+```
+<ProfileContextProvider>
+        <A />
+        <B />
+</ProfileContextProvider>
+
+
+<ProfileContextProvider>
+        <D />
+        <E />
+        <F />
+</ProfileContextProvider>
+
+```
