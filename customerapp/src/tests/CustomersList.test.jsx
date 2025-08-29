@@ -2,11 +2,12 @@ import { describe, it, expect } from 'vitest';
 import { screen, render, fireEvent } from '@testing-library/react'
 import CustomerList from '../../src/components/CustomerList';
 
+// integration testing
 
 describe("testing <CustomerList />", () => {
     // test spec
     it("testing rendering <CustomerList />", () => {
-        render(<CustomerList />);
+        render(<CustomerList />); // render <CustomerRow /> and <Filter />
         // screen.debug();
         let btns = screen.queryAllByRole('button');
         expect(btns.length).toBe(5);
@@ -26,7 +27,7 @@ describe("testing <CustomerList />", () => {
 
         let txtBox = screen.queryByPlaceholderText('search by name');
         fireEvent.change(txtBox, { "target": { "value": "Geller" } });
-        screen.debug();
+        // screen.debug();
         let elementMonica = screen.queryByText(/Monica/);
         expect(elementMonica).toBeInTheDocument();
 
