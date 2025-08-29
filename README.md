@@ -907,10 +907,6 @@ this creates a react applicaiton using "vite" instead of webpack
 
 React version is 19.
 
-
-npm install -D vitest jsdom @testing-library/react @testing-library/jest-dom
-
-
 Day 3:
 
 Recap:
@@ -992,7 +988,17 @@ like List of MobileCard
 
 ```
 
-Resume @ 11:30
-Task after the break..
+Unit testing of React Components
+
+
+npm install -D vitest jsdom @testing-library/react @testing-library/jest-dom
+vite.config.js
+
+https://testing-library.com/docs/react-testing-library
+
+
+
+
+
 
 
