@@ -1033,4 +1033,5 @@ class components can have state, life-cycle methods
 In React 16.4 version Hooks was introduced to get class component capabilities.
 1) useState() to declare a state member for functional component
 2) React.memo() can be used in place of shouldComponentUpdate() lifecyle of class component for functional component.
+3) useEffect() is a hook for componentDidMount(), componentDidUpdate() amd componentWillUnmount()
 
