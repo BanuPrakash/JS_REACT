@@ -7,28 +7,50 @@ export default class CustomerList extends Component {
     y = 15; // this is also state wrt to OOP
     state = {
         customers: [
-            { id: 1, firstName: "Alice", lastName: "Smith" },
-            { id: 2, firstName: "Bob", lastName: "Johnson" },
+            { id: 1, firstName: "Rachel", lastName: "Green" },
+            { id: 2, firstName: "Monica", lastName: "Geller" },
             { id: 3, firstName: "Charlie", lastName: "Brown" },
             { id: 4, firstName: "Diana", lastName: "Williams" },
-            { id: 5, firstName: "Ethan", lastName: "Davis" }
+            { id: 5, firstName: "Ross", lastName: "Geller" }
+        ],
+        original: [
+            { id: 1, firstName: "Rachel", lastName: "Green" },
+            { id: 2, firstName: "Monica", lastName: "Geller" },
+            { id: 3, firstName: "Charlie", lastName: "Brown" },
+            { id: 4, firstName: "Diana", lastName: "Williams" },
+            { id: 5, firstName: "Ross", lastName: "Geller" }
         ]
     }
 
+    filterCustomers(txt) {
+        let custs =  this.state.original.filter(c =>  {
+            if(c.firstName.toUpperCase().indexOf(txt.toUpperCase()) >= 0 ||
+                c.lastName.toUpperCase().indexOf(txt.toUpperCase()) >= 0) {
+                return true;
+            }
+            return false;
+            });
+
+         this.setState({
+            customers: custs 
+        });
+    }
+
     deleteCustomer(id) {
-        let custs = this.state.customers.filter(c => c.id !== id);
+        let custs = this.state.original.filter(c => c.id !== id);
         // this.state.customers = custs; // This updates the state, but reconciliation won't happen
-       
         // async function to update state and trigger re-rendering
         this.setState({
+            original: custs,
             customers: custs
         });
     }
+
     // returns JSX
     render() {
         return (
             <div>
-                <Filter />
+                <Filter filterEvt = {(txt) => this.filterCustomers(txt)}/>
                 {
                     this.state.customers.map(c => <CustomerRow 
                             key={c.id}
