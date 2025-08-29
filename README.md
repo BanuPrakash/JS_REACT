@@ -1084,3 +1084,6 @@ Note: Only Children of Provider can be a Consumer
 </ProfileContextProvider>
 
 ```
+
+https://react.dev/learn/thinking-in-react
+
