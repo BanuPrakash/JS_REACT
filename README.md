@@ -1213,5 +1213,41 @@ state = {
 Reducer function: a reducer fn is one which takes state [previous] and action as arguments and returns the new state.
 function (state, action) => returns new State.
 
+==================================
+
+Application using only functional components:
+1) bootstrap
+<div className="container"></div>
+<button className="primary"></button>
+2) react-bootstrap
+<Button variant="primary"></Button>
+<Container></Container>
+
+Can also use adobe spectrum instead of react-bootstrap [ recommended for mini-project]
+
+3) react-router-dom
+SPA --> Single Page Application
+A Single-Page Application (SPA) is a web application that loads a single HTML page [index.html] and dynamically updates its content as the user interacts with it, rather than loading entirely new pages from the server
+Different URLs has to show different views
+http://adobe.com/products
+http://adobe.com/locations
+http://adobe.com/clients
+http://adobe.com
+
+Navigation will be between views and not pages
+
+* Should allow lazy loading of Components
+4) react Context
+React Context is to avoid props-drill.
+We are going to use it for State Management [ can be done for Small sized applicaiton]
+i.e.., we are going to store even functions in react context, not just data.
+
+5) react hooks
+useState, useEffect, useReducer, useContext, useParams, useNavigate, ...
+
+bootstrap: CSS Framework for building Responsive Web Design, it uses 12 Grid/columns system.
+
+
+
 
 

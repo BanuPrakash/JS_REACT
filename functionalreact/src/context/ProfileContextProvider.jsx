@@ -7,7 +7,7 @@ export default function ProfileContextProvider(props) {
   let [displayName, setDisplayName] = useState("Banu Prakash");
   return (
     <div>
-        <ProfileContext.Provider value={{avatar, displayName}}>
+        <ProfileContext.Provider value={{avatar, displayName, setDisplayName}}>
             {props.children}
         </ProfileContext.Provider>
     </div>
