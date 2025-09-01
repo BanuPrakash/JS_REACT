@@ -1209,3 +1209,9 @@ state = {
         type: 'CLEAR_CART'
     }
 ```
+
+Reducer function: a reducer fn is one which takes state [previous] and action as arguments and returns the new state.
+function (state, action) => returns new State.
+
+
+
