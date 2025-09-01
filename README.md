@@ -1300,3 +1300,5 @@ for CRUD operations, setting headers like Authorization Bearer of JWT token
 
 ========
 
+Resume @ 2:00
+
