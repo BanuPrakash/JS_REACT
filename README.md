@@ -1247,7 +1247,36 @@ useState, useEffect, useReducer, useContext, useParams, useNavigate, ...
 
 bootstrap: CSS Framework for building Responsive Web Design, it uses 12 Grid/columns system.
 
+Question:
+Can we write a dynamic reducer function which works for any state, to perform similar action
 
+Solution: use Root Reducer
+root reducer takes action and delegates the action to different reducers, Reducer 1 does different updates for same action, reducer 2 does different update for same action.
+
+Question:
+In case of complex state, after a change to one state member the whole state is re-rendered? 
+
+After each action, view re-renders. one action can modify multiple data
+
+1) NavbarComponent
+2) ProductList
+3) ProductCard
+4) Details
+5) CartComponent
+6) CartRow
+7) ProductForm
+8) Default [if URL is wrongly typed...]
+
+
+
+Steps:
+1) npm create vite@latest
+Name of project ecomapp/ react and JS project
+2) cd ecomapp
+3) npm i react-router-dom bootstrap react-bootstrap 
+4) npm install  @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome
+
+BrowserRouter --> URL to Component mapping
 
 
 
