@@ -10,15 +10,16 @@ export default function ProductList() {
 
   // componentDidMount
   useEffect(() => {
-    axios.get("https://fakestoreapi.com/products?limit=5")
-    .then(response => setProducts(response.data));
+    // axios.get("https://fakestoreapi.com/products?limit=5")
+    axios.get("http://localhost:1234/products")
+      .then(response => setProducts(response.data));
   }, []);
 
   return (
     <div className='row'>
       {
-        products && products.map(product => <ProductCard  
-            key ={product.id} product={product}/>)
+        products && products.map(product => <ProductCard
+          key={product.id} product={product} />)
       }
     </div>
   )

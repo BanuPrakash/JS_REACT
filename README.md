@@ -1300,5 +1300,16 @@ for CRUD operations, setting headers like Authorization Bearer of JWT token
 
 ========
 
+Checkout --> write data to Server, clear cart and redirect back to landing page.
 
+JSON Server is a lightweight Node.js package that allows for the rapid creation of a mock RESTful API using a simple JSON file as the data source.
+
+npx json-server --watch data.json --port 1234
+
+Endpoints:
+http://localhost:1234/customers
+http://localhost:1234/products
+http://localhost:1234/orders
+
+window.sessionStorage.setItem("username","banu@gmail.com")
 

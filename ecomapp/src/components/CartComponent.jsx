@@ -17,7 +17,7 @@ export default function CartComponent() {
       <div className='row'>
         <div className='col-md-8'>&nbsp;</div>
         <div className='col-md-4'>
-          <Button variant='success'>Checkout</Button>
+          <Button variant='success' onClick={clearCart}>Checkout</Button>
         </div>
       </div>
     </div>
