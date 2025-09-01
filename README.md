@@ -1085,5 +1085,127 @@ Note: Only Children of Provider can be a Consumer
 
 ```
 
-https://react.dev/learn/thinking-in-react
+Recap on react:
 
+```
+* React.createElement() --> JSX to JS object
+* class components - extends Component [inherited] or optionally PureComponent
+- should override render() method
+- render() method should return a JSX [ have only one root element]
+
+* functional component 
+ a simple JS function which returns JSX
+
+ Upto React 16.4 version only class component could have state and life-cycle methods
+ state has to be associated with a member called as state for reconcilliation
+
+ state = {
+    x: 10,
+    y: 15
+ }
+
+ componentDidMount(), componentDidUpdate(), shouldComponentUpdate(), componentWillUnmount()
+
+ React Hooks for functional components which could simulate what functional components was missing compared to class components [ mainly state and lif-cycle methods]
+ -- 99% of components are functional components only from React 16.4 version onwards
+ -- ErrorBoundary Component has to be a ClassComponent
+
+ class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.log(error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return <h1>Something went wrong.</h1>;
+    }
+
+    return this.props.children; 
+  }
+}
+
+<ErrorBoundary>
+    <A />
+    <B />
+    <C />
+</ErrorBoundary>
+
+
+<ErrorBoundary>
+    <D />
+    <E />
+</ErrorBoundary>
+
+Hooks covered so far:
+1) useState() --> returns a tuple where in first member is a state variable, second member is a function using which you can mutate the state.
+let [age, setAge] = useState(20);
+2) useEffect()
+componentDidMount will have a empty dependecy array
+componentDidUpdate will have a depdenency on a member, suggesting that if this member changes useEffect has to be called
+useEffect( () => {
+    // code here gets called if x or y changes
+}, [x, y]);
+
+componentWillUnmount - returned function from useEffect of componentDidMount will work as componentWillUnmount
+
+3) Context:
+central placeholder for state to avoid props-drill
+React supports uni-directional flow of data where parent passed data to child in the form of props
+Provider --> places the data in Context
+Consumer -- get the data from Context 
+4) useContext() is a hook for Context Consumer.
+
+```
+
+Day 4:
+
+5) useReducer hook instead of useState hook
+The useReducer hook in React is an alternative to useState for managing component state, particularly beneficial in scenarios involving complex state logic.
+
+When the state transitions are intricate, involving multiple actions or dependencies on previous state values. 
+
+useReducer can be more efficient as it allows for batching state updates, potentially reducing unnecessary re-renders compared to individual useState updates.
+
+let [cartItems, setCartItmes] = useState([]);
+let [total, setTotal] = useState(0);
+let [quantity, setQuantity] = useState(0);
+
+```
+state = {
+    "profile": {
+        "avatar": "banu.png",
+        "displayName": "Banu Prakash",
+    },
+    "cart": {
+        "cartItems": [
+                {"id": 1, "product": 54, "qty" : 3, "amount": 63433},
+                {"id": 2, "product": 134, "qty": 1, "amount": 7111}
+            ],
+        total: 92524.99
+        "quantity": 2
+    }
+}
+    Action Object is of the format:
+    {
+        type: 'ADD_TO_CART',
+        payload: {"product": 7, "qty": 1}
+    }
+
+    {
+        type: 'INCREMENT',
+        payload: 2
+    }
+
+    {
+        type: 'CLEAR_CART'
+    }
+```
