@@ -1318,3 +1318,21 @@ window.sessionStorage.setItem("username","banu@gmail.com");
 href ==> server side rendering
 Link --> client side rendering
 
+============
+
+Task 1: Complete Quiz Application:
+1) Quiz Context should have 
+    a) questions
+    b) currentIndex of Question [change on << and >>]
+    c) correctAnswers count
+    d) selectedAnswers ==> {} or use Map() called on radio button click
+
+2) Display one Question and its options at a time.
+
+Task 2: Recipe application
+Check PDF in tasks folder.
+
+===========
+
+State Management and Form Handline
+
