@@ -1290,3 +1290,13 @@ Solution: Lazy load of components.
 Include only required compnents in the bundle.js
 other components load as and when required.
 ```
+npm i axios
+
+axios instead of fetch for API calls
+The Axios JavaScript library is a promise-based HTTP client for browsers and Node.js, known for simplifying data fetching from external APIs.
+
+https://www.npmjs.com/package/axios
+for CRUD operations, setting headers like Authorization Bearer of JWT token
+
+========
+
