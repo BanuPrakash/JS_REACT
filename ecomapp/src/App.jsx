@@ -5,12 +5,13 @@ import CartComponent from './components/CartComponent'
 import ProductForm from './components/ProductForm'
 import Details from './components/Details'
 import Default from './components/Default'
-
+import NavbarComponent from './components/NavbarComponent'
 import './App.css'
 
 function App() {
   return (
     <Container>
+      <NavbarComponent />
       <Routes>
         <Route path='/' element={<ProductList />}></Route>
         <Route path='/products' element={<ProductList />}></Route>

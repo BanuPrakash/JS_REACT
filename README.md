@@ -1278,5 +1278,6 @@ Name of project ecomapp/ react and JS project
 
 BrowserRouter --> URL to Component mapping
 
-
+Note: href is for Server Side Routing
+Link is for Client side Routing.
 
