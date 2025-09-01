@@ -1281,3 +1281,12 @@ BrowserRouter --> URL to Component mapping
 Note: href is for Server Side Routing
 Link is for Client side Routing.
 
+
+```
+In Production by default all the code will be placed in a single bundle file and we will have something like
+<script src="bundle.js"></script>
+    This leads to FCP, Browser will have to wait until bundle.js is loaded then only render() happens
+Solution: Lazy load of components.
+Include only required compnents in the bundle.js
+other components load as and when required.
+```
