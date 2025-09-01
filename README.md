@@ -1311,5 +1311,10 @@ http://localhost:1234/customers
 http://localhost:1234/products
 http://localhost:1234/orders
 
-window.sessionStorage.setItem("username","banu@gmail.com")
+window.sessionStorage.setItem("username","banu@gmail.com");
+
+===================
+
+href ==> server side rendering
+Link --> client side rendering
 

@@ -5,6 +5,7 @@ import { faCartShopping, faHeart } from '@fortawesome/free-solid-svg-icons';
 import Card from 'react-bootstrap/Card';
 import { useContext } from 'react';
 import { CartContext } from '../context/CartContextProvider';
+import { Link } from 'react-router-dom';
 
 export default function ProductCard({ product }) {
   let {addToCart} = useContext(CartContext)
@@ -12,7 +13,9 @@ export default function ProductCard({ product }) {
   return (
     <div className='col-md-4 mb-3'>
       <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={image} />
+        <Link to={`/details/${product.id}`} as={Link}>
+          <Card.Img variant="top" src={image} />
+        </Link>
         <Card.Body>
           <Card.Title>{title}</Card.Title>
           <Card.Text>
