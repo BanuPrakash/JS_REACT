@@ -9,7 +9,7 @@ function App() {
     <div>
       <h1>Customer Application</h1>
       <CustomerList />
-      <ParentComponent />
+      {/* <ParentComponent /> */}
     </div>
   )
 }

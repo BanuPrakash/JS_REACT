@@ -1425,4 +1425,17 @@ npm i @swc-react/button @swc-react/card
 import { Button } from '@swc-react/button';
 import { Card } from '@swc-react/card';
 
+====================================================
 
+
+Unit testing and Integration Testing:
+JEST / JASMINE/ MOCHA / VITEST
+
+E2E Testing:
+Protractor / Selenium / Cypress
+needs an running application
+customerapp % npm i cypress
+customerapp % npx cypress open
+OR
+package.json
+ "e2e": "cypress open"
