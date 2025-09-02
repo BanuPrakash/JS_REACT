@@ -1478,12 +1478,23 @@ Why Redux?
 4) Good for Global Store [ MicroFrontend architecture]
 5) A Must for Large scale applications
 
-   function mapDispatchToProps(dispatch) {
-    return {
-        add: (item) => dispatch({type:'ADD_TO_CART, payload: item}),
-        clear: () => dispatch({type:'CLEAR_CART})
-    }
-   }
+======
+
+install Redux DevTools from Chrome Web Store
+
+npm create vite@latest
+redux-example; select react and JS
+
+redux-example% npm i redux react-redux
+
+Contacts Manager
+
+Actions:
+ADD_CONTACT
+CLEAR_CONTACTS
+REMOVE_CONTACT
+
+
 
 
 
