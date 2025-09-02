@@ -1333,9 +1333,6 @@ Task 2: Recipe application
 Check PDF in tasks folder.
 
 ===========
-
-Day 5
-
 Recap:
 ```
 useReducer() and reducer() function
@@ -1391,6 +1388,32 @@ react-bootstrap -- react components [ATOMS / Molecules] provided using bootstrap
 
 ```
 
+Day 5:
+1) Controlled and Uncontrolled Components
+Controlled Components
+State Management:
+React controls the component's state and acts as the single source of truth for the form data. 
+Use Cases:
+Used for dynamic forms, user input validation, and when you need tight control over the input value. 
 
+```
+    export default function ProductForm() {
 
+    }
+
+```
+Uncontrolled Components
+State Management:
+DOM holds the actual form values instead of React Component. 
+Use Cases:
+Suitable for simple forms where you don't need to validate or manipulate input values in real-time. 
+
+https://deepu.tech/memory-management-in-v8/
+
+React 19: supported Server actions.
+
+=====
+
+Using Adobe React Spectrum for ProductForm
+npm i @adobe/react-spectrum
 
