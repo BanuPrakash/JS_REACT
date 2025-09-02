@@ -1416,4 +1416,13 @@ React 19: supported Server actions.
 
 Using Adobe React Spectrum for ProductForm
 npm i @adobe/react-spectrum
+https://react-spectrum.adobe.com/react-spectrum/forms.html
+https://opensource.adobe.com/spectrum-web-components/components/card/
+https://opensource.adobe.com/spectrum-web-components/using-swc-react/
+
+npm i @swc-react/button @swc-react/card
+
+import { Button } from '@swc-react/button';
+import { Card } from '@swc-react/card';
+
 
