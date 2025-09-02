@@ -1439,3 +1439,63 @@ customerapp % npx cypress open
 OR
 package.json
  "e2e": "cypress open"
+ 
+ this generates cypress folder and cypress.config.js
+ terminate e2e
+ Modify cypress.config.js
+ add e2e tests in "e2e" folder
+ execute npm run dev
+ execute npm run e2e
+
+ ================
+
+Predictable State Management:
+This refers to a paradigm or pattern where application state changes are handled in a highly structured, organized, and often immutable manner, making it easy to understand, debug, and predict the application's behavior.
+ 
+ Predictable state management solutions like Redux are generally preferred for large, complex applications with intricate state interactions, asynchronous operations, and a need for centralized state management and debugging tools. The Context API is more suited for smaller to medium-sized applications or for managing less critical, localized global state.
+
+ 1) Flux
+ 2) Redux
+ 3) Zustand
+ 4) Mobx
+ 5) recoil
+
+Flux Architecture: by Facebook using this architecure which recommends uni-directional data flow React was built and they developed Flux for state management
+
+Dan Abramov, Facebook created flux and invalidated it.
+Dan Abramov started a small time for building Redux.
+
+https://www.youtube.com/watch?v=8pDqJVdNa44
+
+==========
+
+Redux/ Mobx / Zustand state management is based on Flux Architecture
+
+Why Redux?
+1) Predicatable State management
+2) Can be devloped by a team and tested independently, later integrate it with React or Angular or any other front end frameworks. Can also be used in backend for state management [NextJS / ExpressJS].
+3) Time Travel debugging [ replay actions and see the state changes]
+4) Good for Global Store [ MicroFrontend architecture]
+5) A Must for Large scale applications
+
+   function mapDispatchToProps(dispatch) {
+    return {
+        add: (item) => dispatch({type:'ADD_TO_CART, payload: item}),
+        clear: () => dispatch({type:'CLEAR_CART})
+    }
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
