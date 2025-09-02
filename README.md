@@ -1487,12 +1487,57 @@ redux-example; select react and JS
 
 redux-example% npm i redux react-redux
 
-Contacts Manager
+=========
 
-Actions:
-ADD_CONTACT
-CLEAR_CONTACTS
-REMOVE_CONTACT
+Task for Redux.
+Multi Stage Processing of FORM Data
+
+
+```
+ state = {
+    formData: {
+        page: 0,
+        personal: {
+            ...
+        },
+        professional: {
+            ...
+        }
+    }
+ }
+ A Single Reducer should be good enough
+ case "ADD_PERSONAL":
+ case "ADD_PROFESSIONAL":
+ case "NEXT_PAGE":
+ case "PREV_PAGE" :
+
+ 
+ page = props.page; // mapStateToProps
+const PageDisplay = () => {
+    swtich(page) {
+        case 0:
+            return <SignUp />
+        case 1:
+            return <PersonalForm />
+        case 2:
+            return <ProfessionalForm />
+        case 3:
+            return <Confirmation />
+    }
+}
+
+return (
+    <div>
+        <Step />
+        {
+            PageDisplay()
+        }
+        {page != 3 && <NavigationButton />}
+    </div>
+
+)
+
+```
 
 
 
