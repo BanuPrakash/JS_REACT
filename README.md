@@ -1511,7 +1511,7 @@ Multi Stage Processing of FORM Data
  case "NEXT_PAGE":
  case "PREV_PAGE" :
 
- 
+
  page = props.page; // mapStateToProps
 const PageDisplay = () => {
     swtich(page) {
@@ -1539,6 +1539,7 @@ return (
 
 ```
 
+Pending: Redux toolkit using this we will upgrade ecomapp from Context to RTK.
 
 
 
