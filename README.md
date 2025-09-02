@@ -1334,5 +1334,63 @@ Check PDF in tasks folder.
 
 ===========
 
-State Management and Form Handline
+Day 5
+
+Recap:
+```
+useReducer() and reducer() function
+- Complex state
+- Conditionally Mutate the state
+- Avoiding too many re-renders
+
+Note: Only way to invoke the reducer() function is by sending Action.
+Action Object --> type and payload
+reducer() takes previous state implicitly, action from View component,
+returns a new state which gets updated in the heap area
+
+Context - meant to be a central placeholder. to avoid props drill.
+Provider --> places the data into Context; Provider is not required if we directly put the data into Context while creating
+let ProfileContext = createContext({"avatar":"banu.png", "displayName": "Banu Prakash"});
+
+Consumer --> gets the data from Context [useContext]
+
+using Consumer without useContext
+
+class MyComp extends Component {
+    render() {
+        return <div>
+            <CartContext.Consumer>
+                {
+                    value => {
+                        value.cartItems.map(...)
+                    }
+                }
+            </CartContext.Consumer>
+        </div>
+    }
+}
+
+function MyComp() {
+    let {cartItems} = useContext(CartContext);
+}
+
+Placing functions inside a Context for state mutation can be done for smaller and medium sized application
+
+---
+react-router-dom:
+SPA needs to display different components for different URLs
+Traverse << and >> will be between components/views and not between pages
+Allows lazy loading of Component. recommended to place lazy loaded component witihn <Suspense> so that we have a fallback
+Link instead of href
+
+axios for API call instead fetch
+
+bootstrap -- CSS Framework for RWD
+react-bootstrap -- react components [ATOMS / Molecules] provided using bootstrap like button, Card, Navbars
+
+
+```
+
+
+
 
