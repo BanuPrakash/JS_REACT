@@ -1539,7 +1539,26 @@ return (
 
 ```
 
-Pending: Redux toolkit using this we will upgrade ecomapp from Context to RTK.
+State Management libraries: Redux / Mobx / Zustand / Flux / Recoil ...
+
+Redux:
+Store --> Single store per redux application -> Single Source Of Truth
+Store is the place where state resides
+Reducer -> (state = initialData , action) => new state
+Can have/ should have more than one reducer.
+Root Reducer --> combineReducers() 
+Store will interact only with Root Reducer.
+Window.__REDUX_DEVTOOLS_EXTENSION__() this object will be available if we add extensions from browser like Chrome Web Store.
+REDUX_DEVTOOLS_EXTENSION: required for Time Travel debugging
+
+React Redux:
+Bridge between react and redux libraries.
+connect(mapStateToProps, mapDispatchToProps)(App)
+App was called as Smart Component.
+
+========
+
+
 
 
 

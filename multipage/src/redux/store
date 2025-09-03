@@ -1,0 +1,8 @@
+import rootReducer from "./reducers"; //index.js
+import { compose, createStore } from "redux";
+
+
+const store = createStore(rootReducer, compose(window.__REDUX_DEVTOOLS_EXTENSION__()));
+
+
+export default store;
