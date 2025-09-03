@@ -6,12 +6,12 @@ import Card from 'react-bootstrap/Card';
 // import { useContext } from 'react';
 // import { CartContext } from '../context/CartContextProvider';
 import { Link } from 'react-router-dom';
-import {useDispatch} from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { addToCart } from '../redux/cartSlice';
 
 export default function ProductCard({ product }) {
   // let {addToCart} = useContext(CartContext)
-  
+
   let dispatch = useDispatch();
 
   let { title, price, category, image } = product;
@@ -33,15 +33,15 @@ export default function ProductCard({ product }) {
           &nbsp; &nbsp;
           <FontAwesomeIcon icon={faHeart} color='red' />
           &nbsp; &nbsp;
-          <FontAwesomeIcon 
-            icon={faCartShopping} 
-            color='blue' 
+          <FontAwesomeIcon
+            icon={faCartShopping}
+            color='blue'
             onClick={() => dispatch(addToCart({
               ...product,
               qty: 1,
               amount: price
             }))}
-            />
+          />
         </Card.Footer>
       </Card>
     </div>

@@ -1615,3 +1615,9 @@ ecom-rtk % npm i axios
 2) Copy all components from ecomapp to ecom-rtk
 leave out Context and reducer
 
+
+=====
+complete CartComponent.jsx and CartRow.jsx 
+
+Resume @ 2:00 Project discussion.
+
