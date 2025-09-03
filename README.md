@@ -1583,9 +1583,7 @@ Simple Project to use RTK
 npm create vite@latest
 rtk-example% npm i @reduxjs/toolkit react-redux
 
-OR
 
-npm create vite@latest --template redux
 
 
 dispatch(increment(10));
@@ -1601,8 +1599,19 @@ useDispatch(). The selector is approximately equivalent to the mapDispatchToProp
 With above 2 hooks we don't need connect(mapStateToProps, mapDispatchToProps)(App);
 
 
+===
 
+Migrating ECOMapp to use RTK instead of Context for StateManagment.
 
+1) npm create vite@latest 
+ecom-rtk
+react and Javascript
 
+ ecom-rtk % npm i bootstrap react-bootstrap react-router-dom @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome
+ ecom-rtk % npm i @reduxjs/toolkit react-redux
+ecom-rtk % npm i @adobe/react-spectrum
+ecom-rtk % npm i axios
 
+2) Copy all components from ecomapp to ecom-rtk
+leave out Context and reducer
 
