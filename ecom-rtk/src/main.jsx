@@ -5,11 +5,15 @@ import {BrowserRouter} from 'react-router-dom'
 import App from './App.jsx'
 // import CartContextProvider from './context/CartContextProvider.jsx'
 
+import {Provider} from 'react-redux'
+import store from './redux/store.js'
 
 createRoot(document.getElementById('root')).render(
 <BrowserRouter>
   {/* <CartContextProvider> */}
-       <App />
+  <Provider store={store}>
+           <App />
+  </Provider>
   {/* </CartContextProvider> */}
 </BrowserRouter>
 )
