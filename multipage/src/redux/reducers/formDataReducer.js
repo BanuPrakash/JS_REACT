@@ -18,6 +18,7 @@ const intialState = {
 export default function formDataReducer(state = intialState, action) {
     switch (action.type) {
         case "UPDATE_SIGNUP":
+            // state.signUpData.email = action.payload.email; // not doing this
             return {
                 ...state,
                 signUpData: {

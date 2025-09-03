@@ -1557,17 +1557,48 @@ connect(mapStateToProps, mapDispatchToProps)(App)
 App was called as Smart Component.
 
 ========
+Spring Framework --> Spring Boot 
+redux ---> @reduxjs/toolkit
+
+@reduxjs/toolkit - Prefer this for actual implementation compared to Redux
+The official, opinionated, batteries-included toolset for efficient Redux development
+
+Why immutable collections in State Managment?
+Easier Change Detection:
+When a state object is immutable, detecting changes is simplified. Instead of deep comparisons, a simple reference equality check can determine if the state has changed, which is crucial for optimizing rendering in frameworks like React and Redux.
+it significantly easier to understand how the state evolves over time, leading to more predictable application behavior.
+
+Reducer is interested in Certain Action
+
+Libraries for immutable collection
+https://immutable-js.com/
+https://immerjs.github.io/immer/
+Autodux 
+
+====================
+
+Simple Project to use RTK
 
 
+npm create vite@latest
+rtk-example% npm i @reduxjs/toolkit react-redux
+
+OR
+
+npm create vite@latest --template redux
 
 
+dispatch(increment(10));
+dispatch(decrement());
+dispatch(reset());
 
+for every action, reducer function is written inline
 
+useSelector().The selector is approximately equivalent to the mapStateToProps argument to connect conceptually.
 
+useDispatch(). The selector is approximately equivalent to the mapDispatchToProps argument to connect conceptually.
 
-
-
-
+With above 2 hooks we don't need connect(mapStateToProps, mapDispatchToProps)(App);
 
 
 

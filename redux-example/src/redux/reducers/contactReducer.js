@@ -1,6 +1,7 @@
 export default function contactReducer(state = [], action) {
     switch (action.type) {
         case 'ADD_CONTACT':
+            // state.push(action.payload); // directly working on reference
             return [...state, action.payload];
         case 'CLEAR_CONTACTS':
             return [];
